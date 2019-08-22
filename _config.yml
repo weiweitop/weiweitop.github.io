@@ -30,8 +30,8 @@ baidu_analytics: 32e47284c5ae43fc363d0b8da8303944
 # Build settings
 permalink:          pretty
 markdown:           kramdown
-paginate:           2
-paginate_path:      "/posts/page:num/"
+paginate:           10
+paginate_path:      /page:num
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
