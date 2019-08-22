@@ -12,3 +12,5 @@ background: '/img/bg-about.jpg'
 喝茶读书
 
 不争朝夕
+
+{% include gitalk.html %}
