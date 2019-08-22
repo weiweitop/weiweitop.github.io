@@ -22,7 +22,7 @@ repo_admin: weiweitop
 
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics:   UA-146221080-1
 
 # Build settings
 permalink:          pretty
