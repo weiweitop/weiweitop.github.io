@@ -11,6 +11,16 @@ github_username:
 facebook_username:  
 linkedin_username:
 
+# OAuth for Gitalk
+clientID: 8723fc7ceb376b620fcd
+clientSecret: 7f88152de61d21c972c54bcc7ea5a553188c4fb2
+
+# Gitalk settings
+repo: weiweitop.github.io
+repo_owner: weiweitop
+repo_admin: weiweitop
+
+
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
