@@ -12,7 +12,7 @@ highlighter-theme: pygments_emacs
 
 最先想到的就是根据`caller`来区分，但在实验的过程中发现两个问题：
 1. 全局调用的时候没有`caller`
-2. 就算知道`caller`也无法区分它是`function`调用还是构造对象
+1. 就算知道`caller`也无法区分它是`function`调用还是构造对象
 
 所以`caller`这条路就走不通了，既然需要在运行期区分，那么该**真爱**`this`登场了。`this`指向当前构造的对象，那就可以区分是`function`调用还是构造对象了。
 
