@@ -34,9 +34,9 @@ background: '/img/bg-index.jpg'
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
             {% if post.subtitle %}
-            <blockquote>{{ post.subtitle }}</blockquote>
+            <blockquote class="list-subtitle">{{ post.subtitle }}</blockquote>
             {% else %}
-            <blockquote>{{ post.excerpt | strip_html | truncatewords: 15 }}</blockquote>
+            <blockquote class="list-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</blockquote>
             {% endif %}
           </a>
           <p class="post-meta">{{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
