@@ -32,9 +32,4 @@ permalink:          pretty
 markdown:           kramdown
 paginate:           10
 paginate_path:      /page:num
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jemoji
+
