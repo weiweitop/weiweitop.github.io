@@ -1,0 +1,55 @@
+:root {
+  /* Colors */
+  --color: #000;
+  --bg-color: #f9f9f9;
+  --hover-bg-color: #e9e9e9;
+  --primary-color: #fc4c02;
+  --secondary-color: #f68727;
+  --muted-color: #999;
+  --link-color: #17f;
+  --code-color: var(--primary-color);
+  --code-bg-color: #fff;
+  
+  /* Typography */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --code-font: Menlo, Consolas, Monaco, Lucida Console, monospace;
+  --code-font-size: 0.75rem;
+  --bold: 700;
+  --x-bold: 900;
+  --line-height: 1.5em;
+  --line-height-heading: 1.3em;
+  --text-transform-heading: uppercase;
+
+  /* Borders and corners */
+  --border-color: #000;
+  --border-color-light: #ccc; /* Used for inline content  */
+
+  --border-radius: 6px;
+  --border-radius-large: 8px;
+  --border-radius-xl: 12px;
+
+  /* Layout */
+  --page-width: 56rem;
+
+  /* Breakpoints */
+  --sm-screen: 720px;
+}
+
+.lightbox-image-link {
+  display: inline-block;
+  padding: 4px;
+  margin: 0 0.5rem 1rem 0.5rem;
+  background-color: var(--bg-color);
+  line-height: 0;
+  border-radius: var(--border-radius-large);
+}
+.lightbox-image-link:hover {
+  background-color: var(--primary-color);
+}
+
+.lightbox-image {
+  width: 21rem;
+  border-radius: var(--border-radius);
+}
+
+}
