@@ -1,6 +1,6 @@
 ---
 layout: post
-background: '/img/posts/科技预言.jpg'
+background: '/img/bg-sciencetech.jpg'
 highlighter-theme: pygments_emacs
 ---
 
