@@ -59,7 +59,7 @@ function WeiWeiNumber(i){
             var nstr = regR[2];
             var nstrlen = nstr.length;
             
-            //callee就是本function
+            //callee就是本function，避免hardcode类名
             var nResult = arguments.callee(0);
             for(idx in nstr){
                 //通过计算ASCII码的差值转换成数字
@@ -78,7 +78,7 @@ function WeiWeiNumber(i){
         }
     }
     
-    if(this instanceof WeiWeiNumber){
+    if(this instanceof arguments.callee){
         //构造对象
         this.valueOf = function(){
             //为了==判断返回true
