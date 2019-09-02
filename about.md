@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: This is what I do.
+description: This is what I pretend to do.
 background: '/img/bg-about.jpg'
 ---
 
