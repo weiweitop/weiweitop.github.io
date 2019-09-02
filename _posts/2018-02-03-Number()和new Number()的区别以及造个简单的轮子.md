@@ -8,7 +8,7 @@ highlighter-theme: pygments_emacs
 
 首先用`typeof`做下探测，n1是`number`而n2是`object`，他们的本质区别就是type不同。
 
-那么有趣的问题来了，`Number`内部肯定知道是怎么调用的它。假设在没有`Number`的情况下，如果我要实现个类似的类应该怎么做呢？
+有趣的是`Number`内部肯定知道是怎么调用的它，假设在没有`Number`的情况下，如果我要实现个类似的类应该怎么做呢？
 
 最先想到的就是根据`caller`来区分，但在实验的过程中发现两个问题：
 1. 全局调用的时候没有`caller`
