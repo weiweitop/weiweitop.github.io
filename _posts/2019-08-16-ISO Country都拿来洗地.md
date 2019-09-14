@@ -59,7 +59,7 @@ imagefolder: "isocountry"
 
 这是涉事的T恤：
 
-{% include lightbox.html src="coach_t-shirt.jpg" groupname="isocountry" title="coach T恤" %}
+{% include lightbox.html imgs="coach_t-shirt.jpg:coach T恤" groupname="isocountry" %}
 
 真是一篇图文并茂，有理有据，引经据典的理性熊文。文章放上了ISO的截图，很有理性的一步步分析推导，照着作者的逻辑，嘿~还真是，那些外国公司好无辜哦:innocent:
 
@@ -79,7 +79,7 @@ imagefolder: "isocountry"
 
 街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？
 
-{% include lightbox.html src="four-confidences.jpg" groupname="isocountry" title="四个自信" %}
+{% include lightbox.html imgs="four-confidences.jpg:四个自信" groupname="isocountry" %}
 
 **有些人跪久了~拉他站起来都还要“理性”找个理由再跪下去！**
 
