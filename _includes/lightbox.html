@@ -1,5 +1,7 @@
-<a class="lightbox-image-link" href="/img/posts/{{ page.imagefolder }}/{{ include.src }}" data-lightbox="{{ include.groupname | default: "same group" }}" data-title="{{ include.title }}">
-  <img class="lightbox-image" src="/img/posts/{{ page.imagefolder }}/{{ include.src }}" alt="{{ include.title }}"/>
-</a>
+{% assign imginfoarr = include.imgs | split: "|" %}
+{% for imginfo in imginfoarr %}{% assign img = imginfo | split: ":" %}
+<a class="lightbox-image-link" href="/img/posts/{{ page.imagefolder }}/{{ img[0] | strip }}" data-lightbox="{{ include.groupname | default: "same group" }}" data-title="{{ img[1] | strip }}">
+  <img class="lightbox-image" src="/img/posts/{{ page.imagefolder }}/{{ img[0] | strip }}" alt="{{ img[1] | strip }}"/>
+</a>{% endfor %}
 
 ***

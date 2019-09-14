@@ -1,3 +1,5 @@
-![{{ include.title }}](/img/posts/{{ page.imagefolder }}/{{ include.src }})
+{% assign imginfoarr = include.imgs | split: "|" %}
+{% for imginfo in imginfoarr %}{% assign img = imginfo | split: ":" %}
+![{{ img[1] | strip }}](/img/posts/{{ page.imagefolder }}/{{ img[0] | strip }}){% endfor %}
 
 ***
