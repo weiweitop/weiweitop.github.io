@@ -1,5 +1,5 @@
 {% assign imginfoarr = include.imgs | split: "|" %}
 {% for imginfo in imginfoarr %}{% assign img = imginfo | split: ":" %}
-![{{ img[1] | strip }}](/img/posts/{{ page.imagefolder }}/{{ img[0] | strip }}){% endfor %}
+<img style="width:{{ include.w | default: '12' }}rem" src="/img/posts/{{ page.imagefolder }}/{{ img[0] | strip }}" alt="{{ img[1] | strip }}">{% endfor %}
 
 ***
