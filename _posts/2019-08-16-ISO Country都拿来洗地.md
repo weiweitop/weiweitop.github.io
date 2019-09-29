@@ -79,7 +79,7 @@ imagefolder: "isocountry"
 
 街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？
 
-{% include lightbox.html imgs="four-confidences.jpg:四个自信" groupname="isocountry" %}
+{% include lightbox.html imgs="four_confidences.jpg:四个自信" groupname="isocountry" %}
 
 **有些人跪久了~拉他站起来都还要“理性”找个理由再跪下去！**
 
