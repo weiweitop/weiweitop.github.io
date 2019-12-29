@@ -77,9 +77,9 @@ imagefolder: "isocountry"
 2. 除了T恤，还有官网的问题是在Country下拉列表里包含台湾。
 3. 耶路撒冷和波多黎各又没有印在T恤上，他们敢吗？
 
-街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？
+街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？反思个屁！
 
 {% include lightbox.html imgs="four_confidences.jpg:四个自信" groupname="isocountry" %}
 
-**有些人跪久了~拉他站起来都还要“理性”找个理由再跪下去！**
+##### **有些人跪久了~拉他站起来都还要“理性”找个理由再跪下去！**
 
