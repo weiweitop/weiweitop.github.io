@@ -6,6 +6,10 @@ body {
   background-color: #fcfcfc
 }
 
+table tr:nth-child(2n) {
+    background-color: #f3f5f6;
+}
+
 code.highlighter-rouge {
   background-color: #f8f8f8;
   border: 1px solid #eaeaea;
