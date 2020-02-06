@@ -1,5 +1,6 @@
 ---
 layout: post
+subtitle: "JavaScript"
 background: '/img/bg-sciencetech.jpg'
 highlighter-theme: pygments_emacs
 ---
