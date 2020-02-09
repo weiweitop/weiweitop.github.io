@@ -6,8 +6,8 @@
 <script type="text/javascript">
 var issueLabel = decodeURI(location.pathname);
 var gitalk = new Gitalk({
-  clientID: '{{ site.clientID }}',
-  clientSecret: '{{ site.clientSecret }}',
+  clientID: '{{ site.github_oauth_clientID }}',
+  clientSecret: '{{ site.github_oauth_clientSecret }}',
   repo: '{{ site.repo }}',
   owner: '{{ site.repo_owner }}',
   admin: ['{{ site.repo_admin }}'],
