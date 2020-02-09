@@ -11,7 +11,7 @@ github_username:
 facebook_username:  
 linkedin_username:
 
-# OAuth for Gitalk
+# GitHub OAuth
 clientID: 8723fc7ceb376b620fcd
 clientSecret: 7f88152de61d21c972c54bcc7ea5a553188c4fb2
 
