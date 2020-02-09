@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+
+<div id="vssue"></div>
+
+<script>
+    new Vue({
+      el: '#vssue',
+
+      render: h => h('Vssue', {
+        props: {
+          title: document.title,
+          
+          options: {
+            owner: '{{ site.repo_owner }}',
+            repo: '{{ site.repo }}',
+            clientId: '{{ site.github_oauth_clientID }}',
+            clientSecret: '{{ site.github_oauth_clientSecret }}'
+          }
+        }
+      })
+    })
+</script>
