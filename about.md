@@ -14,3 +14,11 @@ background: '/img/bg-about.jpg'
 不争朝夕
 
 {% include gitalk.html %}
+
+***
+
+///////////////////////
+
+***
+
+{% include vssue.html %}
