@@ -5,6 +5,7 @@ subtitle: "摆明了欺负你还要蹲在墙角反思？:-1:"
 background: '/img/bg-isocountry.jpg'
 published: true
 imagefolder: "isocountry"
+lastmodify: "2019-12-29"
 ---
 最近看到一篇微信文章，题目是【为什么外国公司集体辱华？原因找到了！】，作者是微信公众号“山河路人”，在我写作之时那篇文章已经被举报删除了。
 
