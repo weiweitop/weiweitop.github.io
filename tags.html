@@ -1,0 +1,32 @@
+---
+layout: page
+title: Tags
+description:
+background: '/img/bg-tags.jpg'
+---
+<div id='tag_cloud' class="tags">
+  {% for tag in site.tags %}
+  <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+  {% endfor %}
+</div>
+
+{% for tag in site.tags %}
+  <h4 id="{{ tag[0] }}" style="color:#0085a1">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></h4><br>
+    {% for post in tag[1] %}
+    <article>
+      <a href="{{ post.url }}">
+        <h5 class="post-title">{{ post.title }}</h5>
+        {% if post.subtitle %}
+          <blockquote class="list-subtitle">{{ post.subtitle }}</blockquote>
+        {% else %}
+          <blockquote class="list-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</blockquote>
+        {% endif %}
+      </a>
+    </article>
+    {% if forloop.last == true %}
+        <hr><hr>
+    {% else %}
+        <hr>
+    {% endif %}
+    {% endfor %}
+{% endfor %}
