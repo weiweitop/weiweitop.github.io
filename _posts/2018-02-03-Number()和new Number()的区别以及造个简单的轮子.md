@@ -4,6 +4,7 @@ subtitle: "JavaScript"
 background: '/img/bg-sciencetech.jpg'
 highlighter-theme: pygments_emacs
 lastmodify: "2020-02-06"
+tags: [编程, JavaScript]
 ---
 
 看JavaScript文档的时候注意到了这种用法`var n1 = Number(123);`，冒出的第一个疑问就是和`var n2 = new Number(123);`有什么区别呢？
