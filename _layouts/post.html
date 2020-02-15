@@ -44,8 +44,21 @@ highlighter-theme: rouge_github
         </div>
         {% endif %}
 
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+          <section>
+            <hr class="hidden-sm hidden-xs">
+            <h5><a href="/tags/">FEATURED TAGS</a></h5>
+            <div class="tags">
+              {% for tag in site.tags %}
+                {% if tag[1].size > site.featured_tags_threshold %}
+                  <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+            
         <hr>
-
         <div class="clearfix">
 
           {% if page.previous.url %}

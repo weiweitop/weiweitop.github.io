@@ -20,6 +20,8 @@ repo: weiweitop.github.io
 repo_owner: weiweitop
 repo_admin: weiweitop
 
+# attach tag to posts more than this value then it's featured tag
+featured_tags_threshold: 1
 
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-146221080-1
