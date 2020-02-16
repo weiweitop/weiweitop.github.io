@@ -11,7 +11,7 @@ background: '/img/bg-tags.jpg'
 </div>
 
 {% for tag in site.tags %}
-  <h3 id="{{ tag[0] }}" style="color:#0085a1">{{ tag[0] }}<sup>{{ tag[1].size }}</sup></h3><br>
+  <h3 id="{{ tag[0] }}" style="color:#0085a1">{{ tag[0] }}<sup> {{ tag[1].size }}</sup></h3><br>
     {% for post in tag[1] %}
     <article>
       <a href="{{ post.url }}">
