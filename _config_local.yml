@@ -1,0 +1,48 @@
+host: localhost
+title:              闲云野鹤
+email:              weiweitop@qq.com
+description:        青箬笠，绿蓑衣，斜风细雨不须归。
+author:             伟哥
+baseurl:            ""
+url:                "https://weiweitop.fun" #the base hostname & protocol for your site that used by sitemap.xml
+
+# Social Profiles
+twitter_username:   
+github_username:    
+facebook_username:  
+linkedin_username:
+
+# GitHub OAuth
+#github_oauth_clientID: 8723fc7ceb376b620fcd
+#github_oauth_clientSecret: 7f88152de61d21c972c54bcc7ea5a553188c4fb2
+
+# for local testing
+github_oauth_clientID: 60e957b1866e9902643a
+github_oauth_clientSecret: 14ccadc4ff19f3b94dc7610f8174daf946c21a01
+
+# settings for comment system
+repo: weiweitop.github.io
+repo_owner: weiweitop
+repo_admin: weiweitop
+comment_issue_label: BlogComment
+
+# attach tag to posts more than this value then it's featured tag
+featured_tags_threshold: 1
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   
+
+# baidu analytics
+baidu_analytics: 
+
+# Build settings
+permalink:          pretty
+markdown:           kramdown
+paginate:           10
+paginate_path:      /page:num
+
+# GitHub Pages gem ignores all plugins included in the Gemfile, have to add them here. But seo, paginate works
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
