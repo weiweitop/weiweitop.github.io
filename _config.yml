@@ -15,10 +15,11 @@ linkedin_username:
 github_oauth_clientID: 8723fc7ceb376b620fcd
 github_oauth_clientSecret: 7f88152de61d21c972c54bcc7ea5a553188c4fb2
 
-# Gitalk settings
+# settings for comment system
 repo: weiweitop.github.io
 repo_owner: weiweitop
 repo_admin: weiweitop
+comment_issue_label: BlogComment
 
 # attach tag to posts more than this value then it's featured tag
 featured_tags_threshold: 1
