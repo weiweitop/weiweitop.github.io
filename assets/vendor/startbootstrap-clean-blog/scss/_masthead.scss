@@ -46,6 +46,35 @@ header.masthead {
       }
     }
   }
+  
+  .tags-heading {
+    padding: 100px 0 50px;
+    color: white;
+    @media only screen and (min-width: 768px) {
+      padding: 100px 0;
+    }
+  }
+  .tags-heading {
+    text-align: center;
+    h1 {
+      font-size: 50px;
+      margin-top: 0;
+    }
+    .subheading {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 10px 0 0;
+      @include sans-serif-font;
+    }
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 80px;
+      }
+    }
+  }
+  
   .post-heading {
     h1 {
       font-size: 35px;
