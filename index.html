@@ -26,7 +26,7 @@ background: '/img/bg-index.jpg'
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-7 col-md-10 mx-auto">
         <!-- Home Post List -->
         {% for post in paginator.posts %}
 
@@ -67,12 +67,8 @@ background: '/img/bg-index.jpg'
 
 
       </div>
-    </div>
-  </div>
-
-  {% comment %}
-<div id="ft" style="font-size:0.8em;position:fixed;top:150px;left:1100px">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+      
+        <div class="col-lg-3 col-md-2 sidebar-container" style="position:sticky">
           <section>
             <hr class="hidden-sm hidden-xs">
             <h5><a href="/tags/">FEATURED TAGS</a></h5>
@@ -85,5 +81,6 @@ background: '/img/bg-index.jpg'
             </div>
           </section>
         </div>
-</div>
-    {% endcomment %}
+      
+    </div>
+  </div>
