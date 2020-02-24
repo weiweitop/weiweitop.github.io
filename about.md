@@ -3,6 +3,7 @@ layout: page
 title: About
 description: This is what I pretend to do.
 background: '/img/bg-about.jpg'
+headingclass: tags-heading
 ---
 
 只闻花香
