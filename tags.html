@@ -12,7 +12,7 @@ headingclass: tags-heading
 </div>
 
 {% for tag in site.tags %}
-  <h3 id="{{ tag[0] }}" style="color:#0085a1">{{ tag[0] }}<sup> {{ tag[1].size }}</sup></h3><br>
+  <h3 id="{{ tag[0] }}"><a style="color:#0085a1" href="#tag_cloud">{{ tag[0] }} <span class="badge badge-primary">{{ tag[1].size }}</span></a></h3>
     {% for post in tag[1] %}
     <article>
       <a href="{{ post.url }}">
