@@ -45,7 +45,8 @@ https://blog.cloudflare.com/staying-on-top-of-tls-attacks/
 https://support.cloudflare.com/hc/en-us/articles/200172516 Understanding Cloudflare's CDN                             Done
 https://support.cloudflare.com/hc/en-us/articles/216537517 Using Content Security Policy (CSP) with Cloudflare        Done
 https://support.cloudflare.com/hc/en-us/articles/200308847 Using cross-origin resource sharing (CORS) with Cloudflare
-https://support.cloudflare.com/hc/en-us/articles/360006660072 DNSSEC
+https://support.cloudflare.com/hc/en-us/articles/360006660072 Configuring DNSSEC
+https://support.cloudflare.com/hc/en-us/articles/360021111972 Troubleshooting DNSSEC
 
 https://support.cloudflare.com/hc/en-us/articles/200168256 Understand Cloudflare Caching Level         Done
 https://support.cloudflare.com/hc/en-us/articles/200168276 Understanding Browser Cache TTL             Done
@@ -58,6 +59,7 @@ https://support.cloudflare.com/hc/en-us/articles/115003206852 Understanding Orig
 https://support.cloudflare.com/hc/en-us/articles/218505467 Using ETag
 
 
+https://www.cloudflare.com/dns/dnssec/how-dnssec-works/
 https://www.cloudflare.com/learning/
  Learn About DDoS Attacks
  Learn About CDNs
