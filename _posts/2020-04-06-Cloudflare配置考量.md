@@ -15,21 +15,7 @@ https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
 https://community.cloudflare.com/t/peering-why-dont-i-reach-the-closest-datacenter-to-me/76479 Done
 https://www.cloudflare.com/learning/cdn/what-is-a-cdn/                                         Done
 https://www.cloudflare.com/learning/cdn/performance/                                           Done
-CDN Glossary
- What is Caching?   Done
- Anycast            Done
- data center        Done 
- Origin Server      Done
- edge server        Done
- IXP                Done
- Reverse Proxy      Done
- RTT                Done
- TTL                Done
- cache-control      Done
- GSLB               Done
- How CDNs Reduce Costs Done
- Cache Hit Ratio    Done
- Static vs Dynamic Caching Done
+CDN Glossary                                                           Done
 https://www.cloudflare.com/learning/cdn/cdn-ssl-tls-security/          Done
 https://www.cloudflare.com/learning/cdn/cdn-load-balance-reliability/  Done
 
@@ -48,6 +34,7 @@ https://support.cloudflare.com/hc/en-us/articles/200308847 Using cross-origin re
 https://support.cloudflare.com/hc/en-us/articles/360006660072 Configuring DNSSEC
 https://support.cloudflare.com/hc/en-us/articles/360021111972 Troubleshooting DNSSEC
 
+https://support.cloudflare.com/hc/en-us/articles/203118044 Gathering info for troubleshooting          Done
 https://support.cloudflare.com/hc/en-us/articles/200168256 Understand Cloudflare Caching Level         Done
 https://support.cloudflare.com/hc/en-us/articles/200168276 Understanding Browser Cache TTL             Done
 https://support.cloudflare.com/hc/en-us/articles/200168436 Understanding Cloudflare Always Online      Done
