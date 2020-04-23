@@ -21,8 +21,8 @@ https://www.cloudflare.com/learning/cdn/cdn-load-balance-reliability/  Done
 
 
 
-https://blog.cloudflare.com/cloudflare-peering-portal-beta/
-https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/
+https://blog.cloudflare.com/cloudflare-peering-portal-beta/                 Done
+https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/  Done
 https://blog.cloudflare.com/edge-side-includes-with-cloudflare-workers/
 https://blog.cloudflare.com/cloudflare-ca-encryption-origin/
 https://blog.cloudflare.com/introducing-0-rtt/
@@ -40,7 +40,7 @@ https://support.cloudflare.com/hc/en-us/articles/200168276 Understanding Browser
 https://support.cloudflare.com/hc/en-us/articles/200168436 Understanding Cloudflare Always Online      Done
 https://support.cloudflare.com/hc/en-us/articles/200168246-Understanding-Cloudflare-Development-Mode   Done
 https://support.cloudflare.com/hc/en-us/articles/206776797-Understanding-Query-String-Sort             Done
-https://support.cloudflare.com/hc/en-us/articles/202775670 Customizing Cloudflare's cache
+https://support.cloudflare.com/hc/en-us/articles/202775670 Customizing Cloudflare's cache              Done
 https://support.cloudflare.com/hc/en-us/articles/360021023712 Best Practices: Speed up
 https://support.cloudflare.com/hc/en-us/articles/115003206852 Understanding Origin Cache-Control
 https://support.cloudflare.com/hc/en-us/articles/218505467 Using ETag
