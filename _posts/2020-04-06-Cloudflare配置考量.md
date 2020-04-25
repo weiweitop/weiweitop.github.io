@@ -34,7 +34,7 @@ https://support.cloudflare.com/hc/en-us/articles/200172516 Understanding Cloudfl
 https://support.cloudflare.com/hc/en-us/articles/216537517 Using Content Security Policy (CSP) with Cloudflare        Done
 https://support.cloudflare.com/hc/en-us/articles/200308847 Using cross-origin resource sharing (CORS) with Cloudflare
 https://support.cloudflare.com/hc/en-us/articles/360006660072 Configuring DNSSEC                                      Done
-https://support.cloudflare.com/hc/en-us/articles/360021111972 Troubleshooting DNSSEC
+https://support.cloudflare.com/hc/en-us/articles/360021111972 Troubleshooting DNSSEC                                  Done
 
 
 https://support.cloudflare.com/hc/en-us/articles/203118044 Gathering info for troubleshooting          Done
@@ -53,7 +53,7 @@ https://www.cloudflare.com/dns/dnssec/how-dnssec-works/
 https://www.cloudflare.com/learning/
  Learn About DDoS Attacks
  Learn About CDNs
- Learn About DNS
+ Learn About DNS https://www.cloudflare.com/learning/dns/dns-security/
  Learn About Web Application Security
  Learn About Performance
  Learn About Serverless
