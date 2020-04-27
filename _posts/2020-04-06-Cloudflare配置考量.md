@@ -1,13 +1,36 @@
 ---
 layout: post
 title: "Cloudflare配置考量"
-subtitle: "找出适合自己网站的配置"
+subtitle: "合理薅羊毛"
 background: '/img/bg-cloudflare.svg'
 published: false
 imagefolder: "cloudflare"
 lastmodify: "2020-04-06"
 tags: [搭建博客, Cloudflare]
 ---
+
+Cloudflare云闪耀（这个名字好）是个全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:joy:
+
+我们先来看看它有多友好，核心功能包括：
+
+- DDoS attack mitigation：Anycast网络天生自带属性，能让任意一台服务器提供服务，攻击流量自然也就分散了。
+
+- Global Content Delivery Network：激动人心的功能！是的~拨打屏幕下方的电话~你就能免费拥有！中国用户感觉不到是因为Cloudflare不在中国提供服务，换句话说没有<abbr title="Points of Presence">PoP</abbr>在中国。服务由合作伙伴百度云加速提供，还只有Enterprise用户才有。
+
+- Support via email：有邮件回就不错了，不过还没联系过。
+
+新文章、新链接肯定是能马上生效的，因为Edge Server里没有Cache就会访问Origin Server。
+
+刚开始觉得Edge Cache TTL设成最低2H很好，修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
+
+看来有必要研究下Cloudflare的配置和行为
+
+#### 
+
+
+#### Firefox/Chrome/Safari行为的差异
+
+Browser Cache TTL的设置就涉及到浏览器的行为
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
