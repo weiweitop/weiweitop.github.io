@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cloudflare配置考量"
-subtitle: "合理薅羊毛"
+subtitle: "合理薅羊毛:sheep:"
 background: '/img/bg-cloudflare.svg'
 published: false
 imagefolder: "cloudflare"
@@ -9,7 +9,7 @@ lastmodify: "2020-04-06"
 tags: [搭建博客, Cloudflare]
 ---
 
-Cloudflare云闪耀（这个名字好）是个全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:joy:
+Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:joy:
 
 我们先来看看它有多友好，核心功能包括：
 
@@ -21,11 +21,25 @@ Cloudflare云闪耀（这个名字好）是个全球<abbr title="Content Deliver
 
 新文章、新链接肯定是能马上生效的，因为Edge Server里没有Cache就会访问Origin Server。
 
-刚开始觉得Edge Cache TTL设成最低2H很好，修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
+刚开始觉得Edge Cache TTL设成最低2H很好，那么修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于我们这种偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
 
-看来有必要研究下Cloudflare的配置和行为
+看来有必要研究下Cloudflare的配置和Cache行为
 
-#### A
+#### 增量式Cache
+
+从效率和成本考虑，我相信Cloudflare是增量Cache的。这里包含两层意思：
+
+1. Cloudflare不会闭着眼睛抓取全站来Cache，又费马达又费电，没有必要。
+
+2. 只有当访问某个页面的时候，HTML和相关资源才会Cache到最近Peer网络的Edge Server，没有必要同步到整个CDN网络，比如某个Edge Server覆盖的地区根本就没人访问你的网站，Cache来做什么呢？
+
+当然，Purge Cache肯定是要通知整个CDN网络的。不建议Purge Everything，好不容易有个人鬼使神差的访问了你的博客，Cache到了Edge Server，你又去把它清了，何必呢，何苦呢:smile:
+
+下面设计了一个实验来验证我的想法：//TODO不同城市
+
+1. 访问https://weiweitop.fun/cdn-cgi/trace，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719)代码。选择三个国家的代理，分别得到法国CDG/日本NRT/英国AMS
+
+话句话说，每个地区的第一个访客是感受不得CDN加速的，和直接访问Origin Server差不多。
 
 
 #### Firefox/Chrome/Safari行为的差异
@@ -64,6 +78,7 @@ https://support.cloudflare.com/hc/en-us/articles/203118044 Gathering info for tr
 https://support.cloudflare.com/hc/en-us/articles/200168256 Understand Cloudflare Caching Level         Done
 https://support.cloudflare.com/hc/en-us/articles/200168276 Understanding Browser Cache TTL             Done
 https://support.cloudflare.com/hc/en-us/articles/200168436 Understanding Cloudflare Always Online      Done
+https://support.cloudflare.com/hc/en-us/articles/200172556 When does Cloudflare crawl my site          Done
 https://support.cloudflare.com/hc/en-us/articles/200168246-Understanding-Cloudflare-Development-Mode   Done
 https://support.cloudflare.com/hc/en-us/articles/206776797-Understanding-Query-String-Sort             Done
 https://support.cloudflare.com/hc/en-us/articles/202775670 Customizing Cloudflare's cache              Done
