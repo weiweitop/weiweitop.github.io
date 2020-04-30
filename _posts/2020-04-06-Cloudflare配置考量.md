@@ -23,7 +23,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 刚开始觉得Edge Cache TTL设成最低2H很好，那么修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于我们这种偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
 
-看来有必要研究下Cloudflare的配置和Cache行为
+看来有必要研究下Cloudflare的配置和免费版的Cache行为。
 
 #### 增量式Cache
 
@@ -33,18 +33,33 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 2. 只有当访问某个页面的时候，HTML和相关资源才会Cache到最近Peer网络的Edge Server，没有必要同步到整个CDN网络，比如某个Edge Server覆盖的地区根本就没人访问你的网站，Cache来做什么呢？
 
-当然，Purge Cache肯定是要通知整个CDN网络的。不建议Purge Everything，好不容易有个人鬼使神差的访问了你的博客，Cache到了Edge Server，你又去把它清了，何必呢，何苦呢:smile:
+当然，Purge Cache肯定是要通知整个CDN网络的。但不建议Purge Everything，好不容易有个人鬼使神差的访问了你的博客，Cache到了Edge Server，你又去把它清除了，何必呢，何苦呢:smile:
 
-下面设计了一个实验来验证我的想法：//TODO不同城市
+下面设计了一个实验来验证我的想法：
 
-1. 访问https://weiweitop.fun/cdn-cgi/trace，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719)代码。选择三个国家的代理，分别得到法国CDG/日本NRT/英国AMS
+1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace)，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719)代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
+2. 清除浏览器Cache，Cloudflare Purge Everything，多等几分钟保证生效。
+3. 用法国代理访问[首页](https://weiweitop.fun)，清除浏览器Cache，再次访问[首页](https://weiweitop.fun)，确认HTTP Header CF-Cache-Status是HIT
+4. 等待18小时（等不及了），足够广播到整个CDN网络，如果有这个流程的话。
+5. 清除浏览器Cache，用日本代理再次确认IATA代码，访问[首页](https://weiweitop.fun)，CF-Cache-Status是MISS
+6. 24小时后，用英国代理，还是MISS
 
-话句话说，每个地区的第一个访客是感受不得CDN加速的，和直接访问Origin Server差不多。
+说明了国与国之间不会同步Cache，至于一个国家内的Data Center之间会不会同步，受条件限制，就不确定了。
 
+那么可以推断出，每个地区的第一个访客是感受不得CDN加速的，和直接访问Origin Server差不多。
 
-#### Firefox/Chrome/Safari行为的差异
+Edge Server上的Cache是如此珍贵，Edge Cache TTL设成最大值:v:
+
+**以上只针对免费用户！顶级付费用户的世界我不懂！**
+
+#### Browser Cache TTL
 
 Browser Cache TTL的设置就涉及到浏览器的行为
+
+Firefox/Chrome/Safari行为的差异
+
+
+#### Always Online
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
