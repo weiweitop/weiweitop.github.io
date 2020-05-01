@@ -23,7 +23,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 刚开始觉得Edge Cache TTL设成最低2H很好，那么修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于我们这种偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
 
-看来有必要研究下Cloudflare的配置和免费版的Cache行为。
+看来有必要研究下Cloudflare的配置和免费版的Cache行为，这样才能做些预测。
 
 #### 增量式Cache
 
@@ -33,7 +33,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 2. 只有当访问某个页面的时候，HTML和相关资源才会Cache到最近Peer网络的Edge Server，没有必要同步到整个CDN网络，比如某个Edge Server覆盖的地区根本就没人访问你的网站，Cache来做什么呢？
 
-当然，Purge Cache肯定是要通知整个CDN网络的。但不建议Purge Everything，好不容易有个人鬼使神差的访问了你的博客，Cache到了Edge Server，你又去把它清除了，何必呢，何苦呢:smile:
+当然，Purge Cache肯定是要通知整个CDN网络的。但不建议Purge Everything，好不容易有个人鬼使神差的访问了你的博客，Cache到了Edge Server，你又去把它清除了，何必呢~何苦呢:smile:
 
 下面设计了一个实验来验证我的想法：
 
@@ -48,18 +48,54 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 那么可以推断出，每个地区的第一个访客是感受不得CDN加速的，和直接访问Origin Server差不多。
 
-Edge Server上的Cache是如此珍贵，Edge Cache TTL设成最大值:v:
+**以至于Edge Server上的Cache是如此珍贵，Edge Cache TTL设成最大值​并且​控制权​在​自己​手里:v:**
 
-**以上只针对免费用户！顶级付费用户的世界我不懂！**
+以上只针对免费用户！顶级付费用户的世界我们不懂:wink:
 
 #### Browser Cache TTL
 
-Browser Cache TTL的设置就涉及到浏览器的行为
+这个配置就涉及到浏览器如何使用Cache，而且主流浏览器之间还有些差异。
 
-Firefox/Chrome/Safari行为的差异
+地址栏输入网址后回车：
 
+- Firefox：如果没过期全部用Cache
+- Chrome：如果没过期全部用Cache，只有HTML文档强制发送If-Modified-Since和Cache-Control max-age=0请求，这样就能保证HTML是最新的。我觉得这样还比较合理:+1:
+- Safari：？
+
+F5/刷新按钮/右键Reload/Ctrl+R：
+
+- Firefox：每个资源发送If-Modified-Since和Cache-Control max-age=0请求，如果没有改变，服务器返回304
+- Chrome：和地址栏输入网址后回车一样
+- Safari：？
+
+Ctrl+F5：
+
+- Firefox：绕开Cache，每个资源都从服务器取一次
+- Chrome：同上
+- Safari：？
+
+比如在浏览器Cache过期前修改了文章和图片，然后在Cloudflare做了Custom Purge，Firefox将看不到改变，F5后才会看到文章和图片的改动，而Chrome将只能看到文章的修改。我觉得大家很少F5，更不要说Ctrl+F5了:laughing:
+
+也就是说我们失去了Cache的控制权。设短了，太多无谓的304；设长了，文章的改动又不能生效。这个只有评估下自己修改的频率了。像我这种基本不更新的博客:joy:设置的是12H
 
 #### Always Online
+
+爬虫程序将会抓取你的网站，在Origin Server挂掉的时候提供有限服务。抓取频率因人而异，免费（Free）用户每隔14天、专业（Pro）用户每隔6天、商业（Business）和企业（Enterprise）用户每隔1天一次。
+
+但只会抓取部分数据，首页前十个链接以及每个深度的第一个链接，最大深度3。
+
+HOME
+
+- Link 1
+  - Link 1-1
+    - Link 1-1-1
+    - Link 1-1-2 不抓
+  - Link 1-2 不抓
+
+- ……
+- Link 10
+  - Link 10-1
+    - Link 10 -1-1
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
@@ -87,7 +123,6 @@ https://support.cloudflare.com/hc/en-us/articles/216537517 Using Content Securit
 https://support.cloudflare.com/hc/en-us/articles/200308847 Using cross-origin resource sharing (CORS) with Cloudflare
 https://support.cloudflare.com/hc/en-us/articles/360006660072 Configuring DNSSEC                                      Done
 https://support.cloudflare.com/hc/en-us/articles/360021111972 Troubleshooting DNSSEC                                  Done
-
 
 https://support.cloudflare.com/hc/en-us/articles/203118044 Gathering info for troubleshooting          Done
 https://support.cloudflare.com/hc/en-us/articles/200168256 Understand Cloudflare Caching Level         Done
