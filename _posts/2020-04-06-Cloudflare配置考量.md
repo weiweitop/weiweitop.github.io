@@ -9,13 +9,13 @@ lastmodify: "2020-04-06"
 tags: [搭建博客, Cloudflare]
 ---
 
-Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:joy:
+Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:grin:
 
 我们先来看看它有多友好，核心功能包括：
 
 - DDoS attack mitigation：Anycast网络天生自带属性，能让任意一台服务器提供服务，攻击流量自然也就分散了。
 
-- Global Content Delivery Network：激动人心的功能！是的~拨打屏幕下方的电话~你就能免费拥有！中国用户感觉不到是因为Cloudflare不在中国提供服务，换句话说没有<abbr title="Points of Presence">PoP</abbr>在中国。服务由合作伙伴百度云加速提供，还只有Enterprise用户才有。
+- Global Content Delivery Network：激动人心的功能！是的~拨打屏幕下方的电话~你就能免费拥有！中国用户感觉不到是因为Cloudflare不在中国提供服务，换句话说没有<abbr title="Points of Presence">PoP</abbr>在中国。服务由合作伙伴百度云加速提供，还只有Enterprise用户才有:expressionless:
 
 - Support via email：有邮件回就不错了，不过还没联系过。
 
@@ -23,7 +23,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 刚开始觉得Edge Cache TTL设成最低2H很好，那么修改最多2H就能自动生效。但后来仔细想了下，不对啊！对于我们这种偏居一偶的个人博客，每天就零星几个人访问，如果下一个访客在2H之后（大概率间隔还更长），那这个CDN还有什么用？
 
-看来有必要研究下Cloudflare的配置和免费版的Cache行为，这样才能做些预测。
+看来有必要研究下Cloudflare的配置和免费版的Cache行为。
 
 #### 增量式Cache
 
@@ -39,12 +39,12 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace)，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719)代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
 2. 清除浏览器Cache，Cloudflare Purge Everything，多等几分钟保证生效。
-3. 用法国代理访问[首页](https://weiweitop.fun)，清除浏览器Cache，再次访问[首页](https://weiweitop.fun)，确认HTTP Header CF-Cache-Status是HIT
+3. 用法国代理访问[首页](https://weiweitop.fun)，清除浏览器Cache，再次访问[首页](https://weiweitop.fun)，确认HTTP Header CF-Cache-Status是HIT。
 4. 等待18小时（等不及了），足够广播到整个CDN网络，如果有这个流程的话。
 5. 清除浏览器Cache，用日本代理再次确认IATA代码，访问[首页](https://weiweitop.fun)，CF-Cache-Status是MISS
-6. 24小时后，用英国代理，还是MISS
+6. 24小时后，用英国代理，还是MISS。
 
-说明了国与国之间不会同步Cache，至于一个国家内的Data Center之间会不会同步，受条件限制，就不确定了。
+说明了国与国之间不会同步Cache，至于一个国家内的Data Center之间会不会同步，受条件限制，就不知道了。
 
 那么可以推断出，每个地区的第一个访客是感受不得CDN加速的，和直接访问Origin Server差不多。
 
@@ -76,7 +76,7 @@ Ctrl+F5：
 
 比如在浏览器Cache过期前修改了文章和图片，然后在Cloudflare做了Custom Purge，Firefox将看不到改变，F5后才会看到文章和图片的改动，而Chrome将只能看到文章的修改。我觉得大家很少F5，更不要说Ctrl+F5了:laughing:
 
-也就是说我们失去了Cache的控制权。设短了，太多无谓的304；设长了，文章的改动又不能生效。这个只有评估下自己修改的频率了。像我这种基本不更新的博客:joy:设置的是12H
+也就是说我们失去了Cache的控制权。设短了，太多无谓的304；设长了，文章的改动又不能生效。这个只有评估下自己修改的频率了。像我这种基本不更新的博客设置的是12H:joy:
 
 #### Always Online
 
@@ -84,18 +84,29 @@ Ctrl+F5：
 
 但只会抓取部分数据，首页前十个链接以及每个深度的第一个链接，最大深度3。
 
-HOME
+HOME：
 
 - Link 1
   - Link 1-1
     - Link 1-1-1
-    - Link 1-1-2 不抓
-  - Link 1-2 不抓
+    - Link 1-1-2 :no_entry:
+  - Link 1-2 :no_entry:
 
 - ……
 - Link 10
   - Link 10-1
     - Link 10 -1-1
+- Link 11 :no_entry:
+
+最佳实践有说：
+
+> Do not use Always Online with A Cache Everything Page Rule that configures an Edge Cache TTL lower than the Always Online crawl frequency pertaining to your domain plan type.
+
+比如Edge Cache TTL设成7天，对免费用户来说Always Online14天才抓取一次，当然Edge Cache里的更新鲜，那么开Always Online就没啥意义了。
+
+但Cache Everything就涉及到访问覆盖率的问题，如果网站非常受欢迎，每一个链接都有人访问，那么Cache Everything就相当于全站缓存；如果一个页面从来没有人访问，那肯定是Cache不到的。
+
+Cache Everything是Cache最受欢迎的页面，Always Online是Cache几个固定的页面。对于博客类网站来说(全是GET)，如果Cache完备，在Edge Cache TTL之前，CDN不关心Origin Server挂没挂掉。
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
