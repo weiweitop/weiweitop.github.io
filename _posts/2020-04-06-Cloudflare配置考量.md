@@ -3,10 +3,10 @@ layout: post
 title: "Cloudflare配置考量"
 subtitle: "合理薅羊毛:sheep:"
 background: '/img/bg-cloudflare.svg'
-published: false
+published: true
 imagefolder: "cloudflare"
 lastmodify: "2020-04-06"
-tags: [搭建博客, Cloudflare]
+tags: [搭建博客, CDN]
 ---
 
 Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:grin:
@@ -58,21 +58,21 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 地址栏输入网址后回车：
 
-- Firefox：如果没过期全部用Cache
-- Chrome：如果没过期全部用Cache，只有HTML文档强制发送If-Modified-Since和Cache-Control max-age=0请求，这样就能保证HTML是最新的。我觉得这样还比较合理:+1:
-- Safari：？
+- Win8.1 Firefox 75.0：如果没过期全部用Cache
+- Win8.1 Chrome 81.0：如果没过期全部用Cache，只有HTML文档强制发送If-Modified-Since和Cache-Control max-age=0请求，这样就能保证HTML是最新的。我觉得这样还比较合理:+1:
+- Safari 13.0.4：HTML文档直接从服务器取，其他资源发送If-Modified-Since请求
 
 F5/刷新按钮/右键Reload/Ctrl+R：
 
-- Firefox：每个资源发送If-Modified-Since和Cache-Control max-age=0请求，如果没有改变，服务器返回304
-- Chrome：和地址栏输入网址后回车一样
-- Safari：？
+- Win8.1 Firefox 75.0：每个资源发送If-Modified-Since和Cache-Control max-age=0请求，如果没有改变，服务器返回304
+- Win8.1 Chrome 81.0：和地址栏输入网址后回车一样
+- Safari 13.0.4：和地址栏输入网址后回车一样
 
 Ctrl+F5：
 
-- Firefox：绕开Cache，每个资源都从服务器取一次
-- Chrome：同上
-- Safari：？
+- Win8.1 Firefox 75.0：绕开Cache，每个资源都从服务器取一次
+- Win8.1 Chrome 81.0：绕开Cache，每个资源都从服务器取一次
+- Safari 13.0.4：（shift+点地址栏旁边的刷新图标）绕开Cache，每个资源都从服务器取一次
 
 比如在浏览器Cache过期前修改了文章和图片，然后在Cloudflare做了Custom Purge，Firefox将看不到改变，F5后才会看到文章和图片的改动，而Chrome将只能看到文章的修改。我觉得大家很少F5，更不要说Ctrl+F5了:laughing:
 
@@ -85,7 +85,6 @@ Ctrl+F5：
 但只会抓取部分数据，首页前十个链接以及每个深度的第一个链接，最大深度3。
 
 HOME：
-
 - Link 1
   - Link 1-1
     - Link 1-1-1
@@ -98,7 +97,7 @@ HOME：
     - Link 10 -1-1
 - Link 11 :no_entry:
 
-最佳实践有说：
+最佳实践说：
 
 > Do not use Always Online with A Cache Everything Page Rule that configures an Edge Cache TTL lower than the Always Online crawl frequency pertaining to your domain plan type.
 
@@ -107,6 +106,8 @@ HOME：
 但Cache Everything就涉及到访问覆盖率的问题，如果网站非常受欢迎，每一个链接都有人访问，那么Cache Everything就相当于全站缓存；如果一个页面从来没有人访问，那肯定是Cache不到的。
 
 Cache Everything是Cache最受欢迎的页面，Always Online是Cache几个固定的页面。对于博客类网站来说(全是GET)，如果Cache完备，在Edge Cache TTL之前，CDN不关心Origin Server挂没挂掉。
+
+不用管最佳实践，激活吧。
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
