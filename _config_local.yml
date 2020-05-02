@@ -2,7 +2,7 @@ host: localhost
 title:              闲云野鹤
 email:              weiweitop@qq.com
 description:        青箬笠，绿蓑衣，斜风细雨不须归。
-author:             伟哥
+author:             Old Debugger
 baseurl:            ""
 url:                "https://weiweitop.fun" #the base hostname & protocol for your site that used by sitemap.xml
 
