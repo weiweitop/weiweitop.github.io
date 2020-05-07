@@ -147,6 +147,7 @@ https://support.cloudflare.com/hc/en-us/articles/202775670 Customizing Cloudflar
 https://support.cloudflare.com/hc/en-us/articles/360021023712 Best Practices: Speed up                 Done
 https://support.cloudflare.com/hc/en-us/articles/115003206852 Understanding Origin Cache-Control       Done
 https://support.cloudflare.com/hc/en-us/articles/218505467 Using ETag                                  Done
+https://support.cloudflare.com/hc/en-us/articles/236166048 Caching Static HTML with WordPress/WooCommerce Done
 
 
 https://www.cloudflare.com/dns/dnssec/how-dnssec-works/
