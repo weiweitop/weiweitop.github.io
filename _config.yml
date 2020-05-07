@@ -30,6 +30,9 @@ google_analytics:   UA-146221080-1
 # baidu analytics
 baidu_analytics: 32e47284c5ae43fc363d0b8da8303944
 
+# sogou site verification
+sogou_site_verification: 3Y5LWbQtOb
+
 # Build settings
 permalink:          pretty
 markdown:           kramdown

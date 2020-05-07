@@ -35,6 +35,9 @@ google_analytics:
 # baidu analytics
 baidu_analytics: 
 
+# sogou site verification
+sogou_site_verification: 
+
 # Build settings
 permalink:          pretty
 markdown:           kramdown
