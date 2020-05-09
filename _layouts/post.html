@@ -33,7 +33,7 @@ highlighter-theme: rouge_github
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-8 offset-lg-1">
         {% comment %}
             {% include toc.html html=content %}
         {% endcomment %}
@@ -83,5 +83,21 @@ highlighter-theme: rouge_github
         </div>
 
       </div>
+      
+      <div class="col-lg-3 d-none d-lg-block" style="font-size:0.9em">
+      {% comment %}
+        <nav id="navbar-toc" class="navbar sticky-top navbar-light bg-light" >
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#增量式cache">增量式Cache</a>
+                <a class="nav-link" href="#browser-cache-ttl">Browser Cache TTL</a>
+                <a class="nav-link" href="#always-online">Always Online</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                    </nav>
+            </nav>
+        </nav>
+      {% endcomment %}
+      </div>
+      
     </div>
   </div>
