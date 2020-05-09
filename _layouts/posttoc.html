@@ -1,0 +1,102 @@
+---
+layout: default
+highlighter-theme: rouge_github
+---
+<link rel="stylesheet" href="/assets/vendor/highlighter-theme/{{ page.highlighter-theme | default: layout.highlighter-theme }}.css">
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+{% else %}
+<header class="masthead">
+{% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <div class="tags">
+              {% for tag in page.tags %}
+                <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <h2 class="subheading">{{ page.subtitle }}</h2>
+            {% endif %}
+            <span class="meta">{{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time_zh.html content=page.content %}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-1">
+      
+        {{ content }}
+
+        {% if page.lastmodify %}
+        <hr>
+        <div style="text-align:right;font-size:0.9em;color:#4e6e8e" class="clearfix">
+                上次更新: <span style="color:#aaa">{{ page.lastmodify }}</span>
+        </div>
+        {% endif %}
+
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+          <section>
+            <hr class="hidden-sm hidden-xs">
+            <h5><a href="/tags/">FEATURED TAGS</a></h5>
+            <div class="tags">
+              {% for tag in site.tags %}
+                {% if tag[1].size > site.featured_tags_threshold %}
+                  <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+            
+        <hr>
+        <div class="clearfix">
+
+          {% if page.previous.url %}
+          <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="">
+          &larr; Previous
+          <span class="d-none d-md-block" style="font-weight:400;text-transform:none">{{ page.previous.title }}</span>
+          </a>
+          {% endif %}
+          {% if page.next.url %}
+          <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="">
+          Next &rarr;
+          <span class="d-none d-md-block" style="font-weight:400;text-transform:none">{{ page.next.title }}</span>
+          </a>
+          {% endif %}
+
+        </div>
+        
+        <div class="clearfix">
+          {% include gitalk.html %}
+        </div>
+
+      </div>
+      
+      <div class="col-lg-3 d-none d-lg-block" style="font-size:0.9em">
+        <nav id="navbar-toc" class="navbar sticky-top navbar-light bg-light" >
+        {% include toc.html html=content %}
+        {% comment %}
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#增量式cache">增量式Cache</a>
+                <a class="nav-link" href="#browser-cache-ttl">Browser Cache TTL</a>
+                <a class="nav-link" href="#always-online">Always Online</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                    </nav>
+            </nav>
+        {% endcomment %}
+        </nav>
+      </div>
+      
+    </div>
+  </div>
