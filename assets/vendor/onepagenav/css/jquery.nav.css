@@ -1,4 +1,4 @@
-* {
+/* * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
 body {
 	color: #222;
 	font: 16px/1.5 Helvetica, Arial, sans-serif;
-}
+} */
 
 h1,
 h2,
@@ -60,13 +60,13 @@ ul {
 	margin-left: 1em;
 }
 
-#nav {
+/*  #nav {
 	left: 20px;
 	list-style: none;
 	margin: 0;
 	position: fixed;
 	top: 20px;
-}
+} */
 
 #nav li {
 	margin-bottom: 2px;

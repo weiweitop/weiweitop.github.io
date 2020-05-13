@@ -84,17 +84,17 @@ highlighter-theme: rouge_github
       
       <div class="col-lg-3 d-none d-lg-block" style="font-size:0.9em">
         <nav id="navbar-toc" class="navbar sticky-top navbar-light bg-light" >
-        {% include toc.html html=content id="nav" %}
-        {% comment %}
+        
+        {% comment %}{% include toc.html html=content id="nav" %}{% endcomment %}
             <nav class="nav nav-pills flex-column">
-                <a class="nav-link" href="#增量式cache">增量式Cache</a>
-                <a class="nav-link" href="#browser-cache-ttl">Browser Cache TTL</a>
-                <a class="nav-link" href="#always-online">Always Online</a>
+                <a class="nav-link" href="#markdown目录">Markdown内建目录</a>
+                <a class="nav-link" href="#jquery-one-page-nav-link">jQuery One Page Nav</a>
+                <a class="nav-link" href="#bootstrap-scrollspy-link">Bootstrap Scrollspy</a>
                     <nav class="nav nav-pills flex-column">
-                        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                        <a class="nav-link ml-3 my-1" href="#head5">Head5</a>
                     </nav>
             </nav>
-        {% endcomment %}
+        
         </nav>
       </div>
       

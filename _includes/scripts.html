@@ -3,6 +3,7 @@
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/lightbox2/js/lightbox.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/tagcloud/js/jquery.tagcloud.custom.js" | relative_url }}"></script>
+<script src="{{"/assets/vendor/onepagenav/js/jquery.nav.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
 <script>
@@ -32,4 +33,14 @@ $.fn.tagcloud.defaults = {
 $(function () {
   $('#tag_cloud a').tagcloud();
 });
+</script>
+
+<script>
+$('#nav').onePageNav({
+
+});
+</script>
+
+<script>
+$('body').scrollspy({ target: '#navbar-toc', offset: 10, method: 'auto' })
 </script>
