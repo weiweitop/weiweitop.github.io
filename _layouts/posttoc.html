@@ -84,8 +84,8 @@ highlighter-theme: rouge_github
       
       <div class="col-lg-3 d-none d-lg-block" style="font-size:0.9em">
         <nav id="navbar-toc" class="navbar sticky-top navbar-light bg-light" >
-        
-        {% comment %}{% include toc.html html=content id="nav" %}{% endcomment %}
+        {% include toc.html html=content id="navx" class="nav.nav-pills" item_class="nav-item" anchor_class="nav-link" %}
+        {% comment %}
             <nav class="nav nav-pills flex-column">
                 <a class="nav-link" href="#markdown目录">Markdown内建目录</a>
                 <a class="nav-link" href="#jquery-one-page-nav-link">jQuery One Page Nav</a>
@@ -94,7 +94,7 @@ highlighter-theme: rouge_github
                         <a class="nav-link ml-3 my-1" href="#head5">Head5</a>
                     </nav>
             </nav>
-        
+        {% endcomment %}
         </nav>
       </div>
       
