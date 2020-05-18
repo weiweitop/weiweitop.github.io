@@ -3,7 +3,7 @@
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/lightbox2/js/lightbox.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/tagcloud/js/jquery.tagcloud.custom.js" | relative_url }}"></script>
-<script src="{{"/assets/vendor/onepagenav/js/jquery.nav.js" | relative_url }}"></script>
+<script src="{{"/assets/vendor/jekylltoc/js/toc.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
 <script>
@@ -37,4 +37,16 @@ $(function () {
 
 <script>
 $('body').scrollspy({ target: '#navbar-toc', offset: 10, method: 'auto' })
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#navbar-toc').toc({ listType: 'ul',
+                           showEffect: 'fadeIn',
+                           title: '',
+                           classes: { list: 'nav nav-pills',
+                        	          item: 'nav-item'
+                        	        } 
+    });
+});
 </script>
