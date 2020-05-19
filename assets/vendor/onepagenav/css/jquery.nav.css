@@ -61,11 +61,11 @@ ul {
 }
 
 #nav {
-    left: 20px;
     list-style: none;
+/*     left: 20px;
     margin: 0;
     position: fixed;
-    top: 20px;
+    top: 20px; */
 }
 
 #nav li {
