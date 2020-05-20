@@ -87,8 +87,8 @@ ul {
 }
 
 .toc li.current > a {
-    background: #666;
-    color: #ededed;
+    background: #dedede;
+    color: #0085a1;
 }
 
 /* #container {

@@ -47,8 +47,8 @@ $(document).ready(function() {
     	title: '',
     	minimumHeaders: 3,
     	headers: 'h1, h2, h3, h4, h5, h6',
-    	listType: 'ul',
-    	showEffect: 'slideDown',//values: [show|slideDown|fadeIn|none]
+    	listType: 'ul',//[ol|ul]
+    	showEffect: 'slideDown',//[show|slideDown|fadeIn|none]
     	showSpeed: 'slow', // set to 0 to deactivate effect
     	classes: { 
     		list: 'toc pl-0 ml-2',
@@ -59,11 +59,11 @@ $(document).ready(function() {
     $('#navbar-toc').onePageNav({
     	navItems: 'a',
     	currentClass: 'current',
-    	changeHash: false,
+    	changeHash: false,//Whether you want to change the hash when a user clicks on the nav.
     	easing: 'swing',//linear|swing
-    	filter: '',
-    	scrollSpeed: 750,
-    	scrollThreshold: 0.3
+    	filter: '',//Selector of links to filter out,':not(.external)'
+    	scrollSpeed: 750,//Speed at which the page will scroll upon clicking on the nav
+    	scrollThreshold: 0.3//Percentage of screen at which the next section should become current.
     });
 });
 </script>
