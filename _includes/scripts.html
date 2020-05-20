@@ -40,24 +40,30 @@ $(function () {
 $('body').scrollspy({ target: '#navbar-toc', offset: 10, method: 'auto' })
 </script> -->
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function() {
-    $('#nav').toc({ listType: 'ul',
-                           showEffect: 'show',//values: [show|slideDown|fadeIn|none]
-                           title: '',
-                           classes: { list: '',//nav nav-pills
-                        	          item: ''//nav-item
-                        	        } 
+    $('#navbar-toc').toc({
+    	noBackToTopLinks: true,
+    	title: '',
+    	minimumHeaders: 3,
+    	headers: 'h1, h2, h3, h4, h5, h6',
+    	listType: 'ul',
+    	showEffect: 'slideDown',//values: [show|slideDown|fadeIn|none]
+    	showSpeed: 'slow', // set to 0 to deactivate effect
+    	classes: { 
+    		list: 'toc pl-0 ml-2',
+    		item: ''
+    	} 
     });
     
-    $('#nav').onePageNav({
+    $('#navbar-toc').onePageNav({
+    	navItems: 'a',
+    	currentClass: 'current',
+    	changeHash: false,
+    	easing: 'swing',//linear|swing
+    	filter: '',
+    	scrollSpeed: 750,
     	scrollThreshold: 0.3
     });
-});
-</script> -->
-
-<script>
-$('#nav').onePageNav({
-	scrollThreshold: 0.3
 });
 </script>

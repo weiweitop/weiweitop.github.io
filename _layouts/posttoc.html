@@ -83,17 +83,10 @@ highlighter-theme: rouge_github
       </div>
       
       <div class="col-lg-3 d-none d-lg-block" style="font-size:0.85em">
-        <nav id="nav" class="navbar sticky-top navbar-light bg-light py-5" >
-        {% include jekyll-toc.html html=content id="nav" class="" item_class="" anchor_class="" %}
+        <nav id="navbar-toc" class="navbar sticky-top navbar-light bg-light py-5" >
+        
         {% comment %}
-            <nav class="nav nav-pills flex-column">
-                <a class="nav-link" href="#markdown目录">Markdown内建目录</a>
-                <a class="nav-link" href="#jquery-one-page-nav-link">jQuery One Page Nav</a>
-                <a class="nav-link" href="#bootstrap-scrollspy-link">Bootstrap Scrollspy</a>
-                    <nav class="nav nav-pills flex-column">
-                        <a class="nav-link ml-3 my-1" href="#head5">Head5</a>
-                    </nav>
-            </nav>
+        {% include jekyll-toc.html html=content id="nav" class="" item_class="" anchor_class="" %}
         {% endcomment %}
         </nav>
       </div>
