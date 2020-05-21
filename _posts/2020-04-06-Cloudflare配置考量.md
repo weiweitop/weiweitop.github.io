@@ -37,11 +37,11 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 下面设计了一个实验来验证我的想法：
 
-1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace)，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719)代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
+1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace){:target="_blank"}，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719){:target="_blank"}代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
 2. 清除浏览器Cache，Cloudflare Purge Everything，多等几分钟保证生效。
-3. 用法国代理访问[首页](https://weiweitop.fun)，清除浏览器Cache，再次访问[首页](https://weiweitop.fun)，确认HTTP Header CF-Cache-Status是HIT。
+3. 用法国代理访问[首页](https://weiweitop.fun){:target="_blank"}，清除浏览器Cache，再次访问[首页](https://weiweitop.fun){:target="_blank"}，确认HTTP Header CF-Cache-Status是HIT。
 4. 等待18小时（等不及了），足够广播到整个CDN网络，如果有这个流程的话。
-5. 清除浏览器Cache，用日本代理再次确认IATA代码，访问[首页](https://weiweitop.fun)，CF-Cache-Status是MISS
+5. 清除浏览器Cache，用日本代理再次确认IATA代码，访问[首页](https://weiweitop.fun){:target="_blank"}，CF-Cache-Status是MISS
 6. 24小时后，用英国代理，还是MISS。
 
 说明了国与国之间不会同步Cache，至于一个国家内的Data Center之间会不会同步，受条件限制，就不知道了。
