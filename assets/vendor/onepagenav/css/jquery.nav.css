@@ -1,71 +1,5 @@
-/* * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    color: #222;
-    font: 16px/1.5 Helvetica, Arial, sans-serif;
-}
-
-h1,
-h2,
-h3,
-p,
-pre,
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-size: 48px;
-    line-height: 1;
-    margin-bottom: 1em;
-}
-
-h2 {
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 1em;
-}
-
-h3 {
-    font-size: 16px;
-    line-height: 1;
-    margin-bottom: 1em;
-}
-
-p,
-pre,
-ul {
-    margin-bottom: 2em;
-}
-
-pre {
-    background: #fefefe;
-    border: 1px solid #dedede;
-    overflow-x: auto;
-    padding: 2em;
-}
-
-ul {
-    margin-left: 1em;
-} */
-
 .toc {
     list-style: none;
-/*     left: 20px;
-    margin: 0;
-    position: fixed;
-    top: 20px; */
 }
 
 .toc li {
@@ -73,13 +7,11 @@ ul {
 }
 
 .toc a {
-/*     background: #ededed; */
     color: #666;
     display: block;
     font-size: 14px;
     padding: 5px 10px;
     text-decoration: none;
-/*     text-transform: uppercase; */
 }
 
 .toc a:hover {
@@ -90,18 +22,3 @@ ul {
     background: #dedede;
     color: #0085a1;
 }
-
-/* #container {
-    margin: 0 auto;
-    width: 800px;
-}
-
-.section {
-    border-bottom: 5px solid #ccc;
-    min-height: 60vh;
-    padding: 50px 20px;
-}
-
-.section p:last-child {
-    margin-bottom: 0;
-} */
