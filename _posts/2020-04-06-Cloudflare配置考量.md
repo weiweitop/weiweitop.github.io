@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posttoc
 title: "Cloudflare配置考量"
 subtitle: "合理薅羊毛:sheep:"
 background: '/img/bg-cloudflare.svg'
@@ -25,7 +25,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 看来有必要研究下Cloudflare的配置和免费版的Cache行为。
 
-#### 增量式Cache
+#### 增量式Cache {#increment-cache}
 
 从效率和成本考虑，我相信Cloudflare是增量Cache的。这里包含两层意思：
 
