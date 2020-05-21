@@ -9,13 +9,13 @@ lastmodify: "2020-04-06"
 tags: [搭建博客, CDN]
 ---
 
-Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Delivery Network">CDN</abbr>供应商，对免费用户友好:grin:
+Cloudflare——云闪耀（这个名字好）是全球CDN供应商，对免费用户友好:grin:
 
 我们先来看看它有多友好，核心功能包括：
 
 - DDoS attack mitigation：Anycast网络天生自带属性，能让任意一台服务器提供服务，攻击流量自然也就分散了。
 
-- Global Content Delivery Network：激动人心的功能！是的~拨打屏幕下方的电话~你就能免费拥有！中国用户感觉不到是因为Cloudflare不在中国提供服务，换句话说没有<abbr title="Points of Presence">PoP</abbr>在中国。服务由合作伙伴百度云加速提供，还只有Enterprise用户才有:expressionless:
+- Global Content Delivery Network：激动人心的功能！是的~拨打屏幕下方的电话~你就能免费拥有！中国用户感觉不到是因为Cloudflare不在中国提供服务，换句话说没有PoP在中国。服务由合作伙伴百度云加速提供，还只有Enterprise用户才有:expressionless:
 
 - Support via email：有邮件回就不错了，不过还没联系过。
 
@@ -37,7 +37,7 @@ Cloudflare——云闪耀（这个名字好）是全球<abbr title="Content Deli
 
 下面设计了一个实验来验证我的想法：
 
-1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace){:target="_blank"}，返回的`colo`字段是离Data Center最近的国际机场[<abbr title="International Air Transport Association">IATA</abbr>](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719){:target="_blank"}代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
+1. 访问[https://weiweitop.fun/cdn-cgi/trace](https://weiweitop.fun/cdn-cgi/trace){:target="_blank"}，返回的`colo`字段是离Data Center最近的国际机场[IATA](https://baike.baidu.com/item/%E6%9C%BA%E5%9C%BA%E4%BB%A3%E7%A0%81/1235719){:target="_blank"}代码。选择三个国家的代理，分别得到法国CDG、日本NRT、英国AMS。
 2. 清除浏览器Cache，Cloudflare Purge Everything，多等几分钟保证生效。
 3. 用法国代理访问[首页](https://weiweitop.fun){:target="_blank"}，清除浏览器Cache，再次访问[首页](https://weiweitop.fun){:target="_blank"}，确认HTTP Header CF-Cache-Status是HIT。
 4. 等待18小时（等不及了），足够广播到整个CDN网络，如果有这个流程的话。
@@ -114,6 +114,10 @@ Cache Everything是Cache最受欢迎的页面，Always Online是Cache几个固�
 [静态博客评论系统的比较及选择]({% post_url 2019-08-10-静态博客评论系统的比较及选择 %})
 
 [静态博客目录生成方案选择]({% post_url 2020-03-18-静态博客目录生成方案选择 %})
+
+*[CDN]:Content Delivery Network
+*[PoP]:Points of Presence
+*[IATA]:International Air Transport Association
 
 {% comment %}
 https://imweb.io/topic/5795dcb6fb312541492eda8c HTTP缓存控制小结  Done
