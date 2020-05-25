@@ -110,10 +110,8 @@ Cache Everything是Cache最受欢迎的页面，Always Online是Cache几个固�
 不用管最佳实践，激活吧。
 
 #### 搭建博客姊妹篇 {#cross-post}
-
-[静态博客评论系统的比较及选择]({% post_url 2019-08-10-静态博客评论系统的比较及选择 %})
-
-[静态博客目录生成方案选择]({% post_url 2020-03-18-静态博客目录生成方案选择 %})
+##### [静态博客评论系统的比较及选择]({% post_url 2019-08-10-静态博客评论系统的比较及选择 %}) {#comment-system}
+##### [静态博客目录生成方案选择]({% post_url 2020-03-18-静态博客目录生成方案选择 %}) {#toc-choose}
 
 *[CDN]:Content Delivery Network
 *[PoP]:Points of Presence
