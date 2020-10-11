@@ -58,7 +58,7 @@
           </li>
           {% endif %}
         </ul>
-        <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }}</p>
+        <p class="copyright text-muted">版权声明：{{ site.author }}&nbsp;&nbsp;{% if page.copyright %}{% include {{ page.copyright }}.html %}{% else %}{% include {{ layout.copyright }}.html %}{% endif %}</p>
       </div>
     </div>
   </div>

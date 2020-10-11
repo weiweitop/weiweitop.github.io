@@ -4,6 +4,7 @@ subtitle: "JavaScript"
 background: '/img/bg-sciencetech.jpg'
 highlighter-theme: pygments_emacs
 lastmodify: "2020-02-06"
+copyright: "by-nc-nd-4.0"
 tags: [编程, JavaScript]
 ---
 
