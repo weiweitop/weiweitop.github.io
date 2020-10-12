@@ -1,7 +1,7 @@
 ---
 layout: posttoc
 title: "Cloudflare配置考量"
-subtitle: "合理薅羊毛:sheep:"
+subtitle: "最大化薅羊毛:sheep:"
 background: '/img/bg-cloudflare.svg'
 published: true
 imagefolder: "cloudflare"
