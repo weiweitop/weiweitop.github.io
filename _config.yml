@@ -36,7 +36,7 @@ sogou_site_verification: 3Y5LWbQtOb
 # Build settings
 permalink:          pretty
 markdown:           kramdown
-paginate:           10
+paginate:           50
 paginate_path:      /page:num
 
 # GitHub Pages gem ignores all plugins included in the Gemfile, have to add them here. But seo, paginate works
