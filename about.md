@@ -18,7 +18,7 @@ headingclass: tags-heading
 
 ***
 
-///////////////////////
+Gitalk :arrow_heading_up: /////////////////////// Vssue :arrow_heading_down:
 
 ***
 
