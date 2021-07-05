@@ -6,7 +6,7 @@ background: '/img/bg-isocountry.jpg'
 published: true
 imagefolder: "isocountry"
 lastmodify: "2019-12-29"
-tags: [反驳, 骂软骨]
+tags: [怼]
 ---
 最近看到一篇微信文章，题目是【为什么外国公司集体辱华？原因找到了！】，作者是微信公众号“山河路人”，在我写作之时那篇文章已经被举报删除了。
 
@@ -79,7 +79,7 @@ tags: [反驳, 骂软骨]
 2. 除了T恤，还有官网的问题是在Country下拉列表里包含台湾。
 3. 耶路撒冷和波多黎各又没有印在T恤上，他们敢吗？
 
-街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？反思个屁！
+街上混混都跑到你头上拉:shit:了还要理性反思是不是今天发型不对？反思个屁！！！
 
 {% include lightbox.html imgs="four_confidences.jpg:四个自信" groupname="isocountry" %}
 
