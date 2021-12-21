@@ -1,7 +1,7 @@
 ---
 layout: posttoc
 title: "EffectiveJava2nd Item 68 Code示例"
-subtitle: "三个版本的比较"
+subtitle: "三个版本的实现"
 background: '/img/bg-bagtravel.jpg'
 published: false
 imagefolder: ""
@@ -10,6 +10,8 @@ tags: [Java]
 ---
 
 #### 原版(CountDownLatch) {#orig}
+
+下面是书上的原版，想要达到的主要目标简单说就是，等所有线程都准备好运行的时候开始计时，然后大家同时运行，等所有线程都运行完成后结束计时。
 
 {% highlight java linenos %}
 
@@ -44,6 +46,8 @@ tags: [Java]
 
 #### wait-notify版 {#w-n}
 
+下面用并发汇编语言实现。
+
 {% highlight java linenos %}
 
     public static long timeWaitNotify(int concurrency, 
@@ -51,7 +55,7 @@ tags: [Java]
         final Object ready = new Object();
         final Object start = new Object();
         final Object done = new Object();
-        final int[] count = {0, 0};//readyCount doneCount
+        final int[] count = {0, 0};//readyCount, doneCount
         
         for(int i = 0; i < concurrency; i++){
             new Thread(() -> {
