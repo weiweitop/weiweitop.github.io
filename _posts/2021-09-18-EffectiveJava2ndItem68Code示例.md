@@ -3,7 +3,7 @@ layout: posttoc
 title: "EffectiveJava2nd Item 68 Code示例"
 subtitle: "三个版本的实现"
 background: '/img/bg-barrier.jpg'
-published: false
+published: true
 imagefolder: ""
 lastmodify: "2021-09-18"
 tags: [Java]
